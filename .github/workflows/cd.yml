@@ -15,8 +15,7 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USERNAME}}
           port: ${{secrets.SSH_PORT}}
-          password: ${{secrets.PASSWORD}}
           script: |
             cd /home/deno/easy_chat_deno
             git pull origin main
-            sudo -S supervisorctl restart deno
+            echo ${{secrets.PASSWORD}} | sudo -S supervisorctl restart deno
