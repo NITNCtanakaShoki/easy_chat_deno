@@ -16,5 +16,6 @@ jobs:
           username: ${{secrets.SSH_USERNAME}}
           port: ${{secrets.SSH_PORT}}
           script: |
-            cd easy_chat_deno
+            cd /home/deno/easy_chat_deno
             git pull origin main
+            sudo supervisorctl restart deno
